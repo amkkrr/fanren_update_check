@@ -6,18 +6,21 @@ version 0.2     2018-10-20
 
 import requests
 from lxml import etree
-from send import SENDER, PASSWD, RECEIVER, SERVER
+from send import RECEIVER, SERVER
 import time
 import logging
 
 loggingfile = 'logfile'
 logging.basicConfig(
-                    level=logging.DEBUG, format='%(asctime)s  %(filename)s : %(levelname)s  %(message)s', datefmt='%Y-%m-%d %A %H:%M:%S',                                     # 时间
+                    level=logging.DEBUG, 
+                    format='%(asctime)s  %(filename)s : %(levelname)s  %(message)s', 
+                    datefmt='%Y-%m-%d %A %H:%M:%S',
                     filename = loggingfile,
                     filemode = 'a') 
 
 url = 'https://book.qidian.com/info/1010734492'
 
+# 检查的间隔时间为10分钟，不要太激进
 sleep_time = 600
 
 
